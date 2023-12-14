@@ -1,0 +1,35 @@
+/* gallery.css */
+
+.photoContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1px;
+}
+
+.photoContainer img.uploaded-image {
+    max-width: 100%;
+    height: 100%;
+    display: block;
+
+    transition: transform 0.3s ease-in-out;
+}
+
+.photoContainer img:hover {
+   transform: scale(2);
+    
+}
+
+/* gallery.css */
+
+/* Устанавливаем максимальную ширину и высоту для изображения */
+/* gallery.css */
+
+/* Стили для нового изображения */
+/*.photoContainer img.uploaded-image {
+    max-width: 100%;
+    height: auto;
+}*/
+
+
+
+

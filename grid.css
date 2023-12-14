@@ -1,0 +1,91 @@
+/* grid.css */
+
+body {
+    background-color: #f2e60a; /* Задаем цвет фона для главной страницы */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Одна строка и два столбца */
+    gap: 20px; /* Промежуток между элементами сетки */
+}
+
+#menu {
+    grid-column: span 2; /* Расширяем меню на два столбца сетки */
+}
+
+#content {
+    display: grid;
+    grid-template-columns: 1fr; /* Одна колонка для содержимого */
+}
+
+.videoContainer {
+    width: 200px; /* Занимает всю доступную ширину */
+    max-width: 600px; /* Максимальная ширина видео контейнера (здесь увеличена для двух видео в строке) */
+    margin: 0 auto; /* Центрируем видео контейнер по горизонтали */
+}
+
+.videoContainer video {
+    width: 200px;
+    height: auto; /* Автоматическая высота для поддержки соотношения сторон */
+}
+
+/* grid.css */
+
+body {
+    background-color: #f2e60a; /* Задаем цвет фона для главной страницы */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Создаем автоматическую сетку с минимальной шириной элемента 200px */
+    gap: 20px; /* Промежуток между элементами сетки */
+}
+
+
+
+/* grid.css */
+
+body {
+    background-color: #f2e60a; /* Задаем цвет фона для галереи */
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+    padding: 20px;
+}
+
+.photoContainer {
+    cursor: pointer;
+}
+
+.photoContainer img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.photoContainer img:hover {
+    transform: scale(2);
+}
+/* grid.css */
+
+body {
+    background-color: #f2e60a; /* Задаем цвет фона для главной страницы */
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.videoContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
