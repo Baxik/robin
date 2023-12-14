@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="grid.css"> <!-- Подключаем файл с grid-стилями -->
+    <link rel="stylesheet" href="gallery.css">
+    <title>Галерея - ROBINZON</title>
+
+    <style>
+        #restaurantInfo {
+            opacity: 0;
+            transition: opacity 0.1s ease;
+        }
+    </style>
+
+
+<style>
+
+
+
+    #uploadContainer input {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        width: 200%;
+    }
+</style>
+
+<style>
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100hv;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    
+
+    
+<script src="script.js"></script>
+
+
+
+    <div id="menu">
+        <img src="./pics/new/WhatsApp Image 2023-11-22 at 16.20.25.jpeg" alt="Логотип меню" style="width: 200px; height: 200px;">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+        <a href="menu.html">Меню ресторана</a>
+        <a href="video.html">Видео</a>
+        <a href="photo.html">Галерея</a>
+        
+    </div>
+
+    <div class="photo"> 
+        <h1>Галерея "<i>Робинзон</i>"</h1>
+        
+    </div>
+
+    <div class="photo-grid">
+
+        
+
+        <div class="photoContainer">
+            <img src="./pics/289412391_481323670660135_4224623042721888418_n.jpg" alt="Фото 1">
+            <img src="./pics/307124932_547228424069659_6970680621690972957_n.jpg" alt="Фото 2">
+            <img src="./pics/307300900_547226717403163_1894855588826684786_n.jpg" alt="Фото 3">
+            <img src="./pics/80364332_2575786475809836_758723977341304832_n.jpg" alt="Фото 4">
+        <img src="./pics/79796419_2575782895810194_187613019121909760_n.jpg" alt="Фото 4">
+            <img src="./pics/79315041_2560140724041078_3183851194871185408_n.jpg" alt="Фото 4">
+            <img src="./pics/80364332_2575786475809836_758723977341304832_n.jpg" alt="Фото 4">
+            <img src="./pics/79481220_2544693412252476_8161825235620855808_n.jpg" alt="Фото 4">
+            <img src="./pics/meat.jpeg" alt="Фото 4">
+            <img src="./pics/1.jpeg" alt="Фото 4">
+            <img src="./pics/2.jpeg" alt="Фото 4">
+            <img src="./pics/3.jpeg" alt="Фото 4">
+            <img src="./pics/4.jpeg" alt="Фото 4">
+            <img src="./pics/5.jpeg" alt="Фото 4">
+            <img src="./pics/6.jpeg" alt="Фото 4">
+            <img src="./pics/7.jpeg" alt="Фото 4">
+        </div>
+
+        
+    </div>
+
+
+
+    <div id="uploadContainer">
+        <h2>Загрузить фотографию</h2>
+        <input type="file" id="fileInput" accept="image/*">
+        <button onclick="uploadPhoto()">Загрузить</button>
+    </div>
+
+
+
+    <div id="restaurantInfo">
+        <h2>Адрес ресторана</h2>
+        <p>Петах-Тиква, Яхезкель Робинзон 11</p>
+        <p>רבינזון יחזקאל 11 פתח תקווה</p>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        var restaurantInfo = document.getElementById('restaurantInfo');
+        var menu = document.getElementById('menu');
+    
+        document.addEventListener('mousemove', function () {
+            restaurantInfo.style.opacity = 1;
+            menu.style.opacity = 1;
+    
+            setTimeout(function () {
+                restaurantInfo.style.opacity = 0;
+                menu.style.opacity = 0;
+            }, 3000);
+        });
+    
+        var savedPhotos = JSON.parse(sessionStorage.getItem('uploadedPhotos')) || [];
+    
+        function uploadPhoto() {
+    var fileInput = document.getElementById('fileInput');
+    var photoGrid = document.querySelector('.photo-grid');
+
+    if (fileInput.files.length > 0) {
+        var newPhotoContainer = document.createElement('div');
+        newPhotoContainer.className = 'photoContainer';
+
+        var newImage = document.createElement('img');
+
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            newImage.src = e.target.result;
+            newImage.alt = 'Новая фотография';
+            
+            // Добавляем стили для новой картинки
+            // Вместо установки стилей, добавим класс "uploaded-image"
+            newImage.classList.add('uploaded-image');
+
+
+
+            var deleteButton = document.createElement('button');
+            deleteButton.innerText = 'Удалить';
+            deleteButton.onclick = function () {
+                deletePhoto(newPhotoContainer, savedPhotos.indexOf(photo));
+            };
+
+            newPhotoContainer.appendChild(newImage);
+            newPhotoContainer.appendChild(deleteButton);
+            photoGrid.appendChild(newPhotoContainer);
+
+            savedPhotos.push({
+                src: e.target.result,
+                alt: newImage.alt
+            });
+
+          sessionStorage.setItem('uploadedPhotos', JSON.stringify(savedPhotos));
+          localStorage.setItem('uploadedPhotos', JSON.stringify(savedPhotos));
+        };
+
+        reader.readAsDataURL(fileInput.files[0]);
+
+        fileInput.value = '';
+        uploadContainer.style.display = 'none';
+
+        location.reload();
+    }
+}
+
+    
+        function deletePhoto(photoContainer, index) {
+            photoContainer.remove();
+            savedPhotos.splice(index, 1);
+            sessionStorage.setItem('uploadedPhotos', JSON.stringify(savedPhotos));
+        }
+    
+        window.onload = function () {
+            var photoGrid = document.querySelector('.photo-grid');
+    
+            savedPhotos.forEach(function (photo, index) {
+                var newPhotoContainer = document.createElement('div');
+                newPhotoContainer.className = 'photoContainer';
+    
+                var newImage = document.createElement('img');
+                newImage.src = photo.src;
+                newImage.alt = photo.alt;
+    
+                var deleteButton = document.createElement('button');
+                deleteButton.innerText = 'Удалить';
+                deleteButton.onclick = function () {
+                    deletePhoto(newPhotoContainer, index);
+                };
+    
+                newPhotoContainer.appendChild(newImage);
+                newPhotoContainer.appendChild(deleteButton);
+                photoGrid.appendChild(newPhotoContainer);
+            });
+        };
+    </script>
+    
+
+</body>
+</html>

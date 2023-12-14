@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        body {
+            background-color: #f2e60a;
+        }
+
+        #restaurantInfo {
+            opacity: 0;
+            transition: opacity 0.1s ease;
+        }
+
+        #photoContainer {
+            text-align: center; /* Центрирование содержимого по горизонтали */
+            margin: 0 auto; /* Автоматическое центрирование блока по горизонтали */
+        }
+
+        #photoContainer img {
+            display: block; /* Убираем лишние отступы вокруг изображения */
+            margin: 0 auto; /* Автоматическое центрирование изображения по горизонтали */
+        }
+    </style>
+    <title>ROBINZON</title>
+</head>
+<body>
+
+    <div id="menu">
+        <img src="./pics/new/WhatsApp Image 2023-11-22 at 16.20.25.jpeg" alt="Логотип меню" style="width: 200px; height: 200px;">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+        <a href="menu.html">Меню ресторана</a>
+        <a href="video.html">Видео</a>
+        <a href="photo.html">Галерея</a>
+         
+    </div>
+
+    <div id="content">
+        <!-- Содержимое главной страницы будет динамически загружаться здесь -->
+        <div id="photoContainer">
+            <img src="./pics/FB_IMG_1699899621359.jpg" alt="Ваша фотография" width="100%">
+        </div>
+    </div>
+
+    <div id="restaurantInfo">
+        <h2>Адрес ресторана</h2>
+        <p>Петах-Тиква, Яхезкель Робинзон 11</p>
+        <p>רבינזון יחזקאל 11 פתח תקווה</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+
+        var restaurantInfo = document.getElementById('restaurantInfo');
+        
+        var menu = document.getElementById('menu');
+
+      
+
+
+        document.addEventListener('mousemove', function() {
+            restaurantInfo.style.opacity = 1;
+            
+            menu.style.opacity = 1;
+            // Устанавливаем таймер на 3 секунды, после которого блок исчезнет
+            setTimeout(function() {
+                restaurantInfo.style.opacity = 0;
+
+                menu.style.opacity = 0;
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+

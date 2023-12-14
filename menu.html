@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f2e60a; /* Задаем цвет фона для главной страницы */
+        }
+
+          /* Добавьте класс для увеличенного изображения */
+          .enlarged-img {
+            width: 100%; /* Установите ширину в 100%, когда изображение увеличено */
+            height: auto; /* Сохраните соотношение сторон */
+            transition: transform 0.3s ease; /* Добавьте плавный эффект перехода */
+        }
+
+        /* Примените класс увеличенного изображения при наведении */
+        .photoContainer img:hover {
+            transform: scale(1.1); /* Увеличьте изображение на 10% при наведении */
+        }
+
+        .photoContainer {
+            height: auto;
+            width: auto;
+        }
+    </style>
+    <title>Меню - ROBINZON</title>
+
+    <style>
+        #restaurantInfo {
+            opacity: 0;
+            transition: opacity 0.1s ease;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="menu">
+        <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.32 (3).jpeg" alt="Логотип меню" style="width: 200px; height: 200px;">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+        <a href="menu.html">Меню ресторана</a>
+        <a href="video.html">Видео</a>
+        <a href="photo.html">Галерея</a>
+       
+    </div>
+
+    <div id="restaurantInfo">
+        <h2>Адрес ресторана</h2>
+        <p>Петах-Тиква, Яхезкель Робинзон 11</p>
+        <p>רבינזון יחזקאל 11 פתח תקווה</p>
+    </div>
+
+    <div id="content">
+        <div class="photoContainer">
+            <img src="./pics/402320765_865637555562076_7980905656192821126_n.jpg" alt="Фото 1" style="width: 50%;">
+            <div class="gallery">
+                <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.33.jpeg" alt="Фото 1" class="enlarged-img">
+                <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.32 (1).jpeg" alt="Фото 2" class="enlarged-img">
+                <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.32 (2).jpeg" alt="Фото 3" class="enlarged-img">
+                <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.32.jpeg" alt="Фото 4" class="enlarged-img">
+               
+                <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.33 (1).jpeg" alt="Фото 5" class="enlarged-img">
+                <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.33 (2).jpeg" alt="Фото 4" class="enlarged-img">
+            </div>
+        </div>
+    </div>
+    
+
+ 
+
+    <script src="script.js"></script>
+
+    <script>
+        var restaurantInfo = document.getElementById('restaurantInfo');
+
+        var menu = document.getElementById('menu');
+
+        document.addEventListener('mousemove', function() {
+            restaurantInfo.style.opacity = 1;
+
+            menu.style.opacity = 1;
+            
+            // Устанавливаем таймер на 3 секунды, после которого блок исчезнет
+            setTimeout(function() {
+                restaurantInfo.style.opacity = 0;
+
+                menu.style.opacity = 0;
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>
+
