@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#menu {
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    color: white;
+}
+
+#content {
+    margin-left: 220px;
+    padding: 20px;
+}
+
+#restaurantInfo {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    
+        background-color: rgba(255, 255, 255, 0.7); /* Используйте rgba для указания цвета с прозрачностью */
+        padding: 10px; /* Добавьте отступы, чтобы текст не прижимался к краям */
+        border-radius: 10px; /* Опционально: скруглите углы */
+    
+    
+}
+
+#menuContent {
+    display: none;
+}
+
+.menuItem {
+    margin-bottom: 20px;
+}
+
+.menuItem img {
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#videoContainer {
+    width: 356px; /* Ширина окошка видео */
+    height: 200px; /* Высота окошка видео */
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+a:hover {
+    background-color: #555;
+}
+
+
+.email-link {
+    text-decoration: underline;
+    color: blue;
+    font-size: 1.2em; /* Измените значение на тот, который вам подходит */
+}
+
+
+#content {
+    max-width: 800px; /* Максимальная ширина содержимого, чтобы не было слишком широким на больших экранах */
+    margin: 0 auto; /* Автоматическое центрирование по горизонтали */
+    padding: 20px; /* Добавим немного отступов вокруг содержимого */
+}
+
+h1 i {
+    text-decoration: underline; /* Подчеркивание текста */
+}
+
+h1 {
+    text-align: center; /* Центрирование текста */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
