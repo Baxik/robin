@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="grid.css"> <!-- Подключаем файл с grid-стилями -->
+    <title>Видео - ROBINZON</title>
+    <style>
+        #restaurantInfo {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    </style>
+
+<style>
+
+
+
+    #uploadContainer input {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        width: 200%;
+    }
+</style>
+
+
+</head>
+<body>
+
+    <div id="menu">
+        <img src="./pics/new/WhatsApp Image 2023-11-22 at 16.20.25.jpeg" alt="Логотип меню" style="width: 200px; height: 200px;">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+        <a href="menu.html">Меню ресторана</a>
+        <a href="video.html">Видео</a>
+        <a href="photo.html">Галерея</a>
+       
+    </div>
+
+    <div id="restaurantInfo">
+        <h2>Адрес ресторана</h2>
+        <p>Петах-Тиква, Яхезкель Робинзон 11</p>
+    </div>
+
+
+
+    
+
+
+
+    <div id="content" class="video-grid">
+        <!-- Содержимое главной страницы будет динамически загружаться здесь -->
+        <div class="videoContainer">
+            <video controls>
+                <source src="./vids/Screen_Recording_20231113_200956_Facebook.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="videoContainer">
+            <video controls>
+                <source src="./vids/Screen_Recording_20231113_202138_Facebook.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        var restaurantInfo = document.getElementById('restaurantInfo');
+
+        var menu = document.getElementById('menu');
+
+        document.addEventListener('mousemove', function() {
+            restaurantInfo.style.opacity = 1;
+
+            menu.style.opacity = 1;
+            
+            // Устанавливаем таймер на 3 секунды, после которого блок исчезнет
+            setTimeout(function() {
+                restaurantInfo.style.opacity = 0;
+
+                menu.style.opacity = 0;
+            }, 3000);
+        });
+
+
+
+
+
+
+
+       
+
+
+
+    </script>
+
+</body>
+</html>
+
+
+
+

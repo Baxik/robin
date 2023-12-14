@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f2e60a; /* Задаем цвет фона для главной страницы */
+        }
+
+        #restaurantInfo {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #content {
+            max-width: 800px; /* Максимальная ширина содержимого, чтобы не было слишком широким на больших экранах */
+            margin: 0 auto; /* Автоматическое центрирование по горизонтали */
+            padding: 20px; /* Добавим немного отступов вокруг содержимого */
+        }
+
+        p i {
+            font-size: 1.2em; /* Размер шрифта 1.2em - вы можете увеличить или уменьшить значение */
+        }
+
+        h1 i {
+            text-decoration: underline; /* Подчеркивание текста */
+        }
+
+        h1 {
+            text-align: center; /* Центрирование текста */
+        }
+    </style>
+    <title>О нас - ROBINZON</title>
+</head>
+<body>
+
+    <div id="menu">
+        <img src="./pics/new/WhatsApp Image 2023-11-22 at 16.20.25.jpeg" alt="Логотип меню" style="width: 200px; height: 200px;">
+        <a href="index.html">Главная</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+        <a href="menu.html">Меню ресторана</a>
+        <a href="video.html">Видео</a>
+        <a href="photo.html">Галерея</a>
+        
+    </div>
+
+    <div id="content">
+        <!-- Содержимое страницы "О нас" будет динамически загружаться здесь -->
+        <!-- Ваш контент "О нас" -->
+        <h1>Ресторан "<i>Робинзон</i>"</h1>
+        <p><i>Первый русский ресторан в Петах-Тикве и третий русский ресторан в Израиле.</i></p>
+        <p><i>Основан в 1994 году.</i></p>
+        <p><i>Два этажа ресторана, вмещают до 200 гостей.</i></p>
+        <p><i>В нашем банкетном зале, вы можете провести любое торжество.</i></p>
+        <p><i>В нашем ресторане, можно провести:</i></p>
+        <p><i>- Корпоратив;</i></p>
+        <p><i>- Бар\Бат мицву;</i></p>
+        <p><i>- Свадьбу и т.д.</i></p>
+    </div>
+
+    <div id="restaurantInfo">
+        <h2>Адрес ресторана</h2>
+        <p>Петах-Тиква, Яхезкель Робинзон 11</p>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        var restaurantInfo = document.getElementById('restaurantInfo');
+
+        var menu = document.getElementById('menu');
+
+        document.addEventListener('mousemove', function() {
+            restaurantInfo.style.opacity = 5;
+
+            menu.style.opacity = 5;
+        });
+            // Устанавливаем таймер на 3 секунды, после которого блок исчезнет
+            document.addEventListener('mouseout', function() {
+            restaurantInfo.style.opacity = 5;
+            menu.style.opacity = 5;
+        });
+    </script>
+</body>
+</html>
+
+
