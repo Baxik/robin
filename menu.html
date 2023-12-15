@@ -9,10 +9,12 @@
     <style>
         body {
             background-color: #f2e60a; /* Задаем цвет фона для главной страницы */
+            font-family: Arial, sans-serif; /* Используем стандартный шрифт для улучшения читаемости */
+            margin: 0; /* Убираем отступы по умолчанию */
         }
 
-          /* Добавьте класс для увеличенного изображения */
-          .enlarged-img {
+        /* Добавьте класс для увеличенного изображения */
+        .enlarged-img {
             width: 100%; /* Установите ширину в 100%, когда изображение увеличено */
             height: auto; /* Сохраните соотношение сторон */
             transition: transform 0.3s ease; /* Добавьте плавный эффект перехода */
@@ -24,22 +26,31 @@
         }
 
         .photoContainer {
-            height: auto;
             width: auto;
+            max-width: 100%; /* Ширина контейнера 100%, чтобы подстраиваться под экран */
+            margin: 0 auto; /* Центрируйте контейнер */
+            overflow: hidden; /* Обрезаем изображение, если оно не помещается в контейнере */
+            display: flex;
+            justify-content: space-between; /* Распределение по ширине с промежутками между изображениями */
+            flex-wrap: wrap; /* Обертывание на следующую строку, если не помещается в текущей */
+        }
+
+        .photoContainer img {
+            width: calc(33.33% - 10px); /* Ширина каждого изображения в 33.33% с учетом промежутков */
+            height: auto;
+            margin-bottom: 10px; /* Промежуток между изображениями */
+            transition: transform 0.3s ease;
+        }
+
+        .photoContainer img:hover {
+            transform: scale(1.1);
         }
     </style>
     <title>Меню - ROBINZON</title>
-
-    <style>
-        #restaurantInfo {
-            opacity: 0;
-            transition: opacity 0.1s ease;
-        }
-    </style>
-
 </head>
 <body>
 
+    <!-- Верхний блок с логотипом и меню -->
     <div id="menu">
         <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.32 (3).jpeg" alt="Логотип меню" style="width: 200px; height: 200px;">
         <a href="index.html">Главная</a>
@@ -47,49 +58,43 @@
         <a href="contact.html">Контакты</a>
         <a href="menu.html">Меню ресторана</a>
         <a href="photo.html">Галерея</a>
-       
     </div>
 
+    <!-- Блок с адресом ресторана -->
     <div id="restaurantInfo">
         <h2>Адрес ресторана</h2>
         <p>Петах-Тиква, Яхезкель Робинзон 11</p>
-        <p>רבינזון יחזקאל 11 פתח תקווה</p>
+        <p>רבינזון יחזקאל 11 Петах Тиква</p>
     </div>
 
+    <!-- Основной контент -->
     <div id="content">
         <div class="photoContainer">
-            <img src="./pics/402320765_865637555562076_7980905656192821126_n.jpg" alt="Фото 1" style="width: 100%;">
+            <img src="./pics/402320765_865637555562076_7980905656192821126_n.jpg" alt="Фото 1">
             <div class="gallery">
                 <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.33.jpeg" alt="Фото 1" class="enlarged-img">
                 <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.32 (1).jpeg" alt="Фото 2" class="enlarged-img">
                 <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.32 (2).jpeg" alt="Фото 3" class="enlarged-img">
                 <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.32.jpeg" alt="Фото 4" class="enlarged-img">
-               
                 <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.33 (1).jpeg" alt="Фото 5" class="enlarged-img">
-                <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.33 (2).jpeg" alt="Фото 4" class="enlarged-img">
+                <img src="./pics/menu/WhatsApp Image 2023-11-22 at 15.50.33 (2).jpeg" alt="Фото 6" class="enlarged-img">
             </div>
         </div>
     </div>
-    
-
- 
 
     <script src="script.js"></script>
 
     <script>
         var restaurantInfo = document.getElementById('restaurantInfo');
-
         var menu = document.getElementById('menu');
 
         document.addEventListener('mousemove', function() {
             restaurantInfo.style.opacity = 1;
-
             menu.style.opacity = 1;
-            
+
             // Устанавливаем таймер на 3 секунды, после которого блок исчезнет
             setTimeout(function() {
                 restaurantInfo.style.opacity = 0;
-
                 menu.style.opacity = 0;
             }, 3000);
         });
