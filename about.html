@@ -11,7 +11,7 @@
 
         #restaurantInfo {
             opacity: 0;
-            transition: opacity 0.1s ease;
+            transition: opacity 0.3s ease;
         }
 
         #content {
@@ -74,14 +74,14 @@
         var menu = document.getElementById('menu');
 
         document.addEventListener('mousemove', function() {
-            restaurantInfo.style.opacity = 5;
+            restaurantInfo.style.opacity = 1;
 
-            menu.style.opacity = 5;
+            menu.style.opacity = 1;
         });
             // Устанавливаем таймер на 3 секунды, после которого блок исчезнет
             document.addEventListener('mouseout', function() {
-            restaurantInfo.style.opacity = 5;
-            menu.style.opacity = 5;
+            restaurantInfo.style.opacity = 0;
+            menu.style.opacity = 0;
         });
     </script>
 </body>
