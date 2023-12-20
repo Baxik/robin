@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="grid.css"> <!-- Подключаем файл с grid-стилями -->
-    <link rel="stylesheet" href="gallery.css">
+   
     <title>Галерея - ROBINZON</title>
 
     <style>
@@ -36,6 +35,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100hv;
+    background-color: #f2e60a;
 }
 </style>
 
@@ -108,18 +108,9 @@ body {
     <script src="script.js"></script>
 
     <script>
-        var restaurantInfo = document.getElementById('restaurantInfo');
-        var menu = document.getElementById('menu');
-    
-        document.addEventListener('mousemove', function () {
-            restaurantInfo.style.opacity = 1;
-            menu.style.opacity = 1;
-    
-            setTimeout(function () {
-                restaurantInfo.style.opacity = 0;
-                menu.style.opacity = 0;
-            }, 3000);
-        });
+       //=========================================//
+
+       //========================================//
     
         var savedPhotos = JSON.parse(sessionStorage.getItem('uploadedPhotos')) || [];
     
@@ -202,7 +193,22 @@ body {
             });
         };
     </script>
+    <script>
+
+var restaurantInfo = document.getElementById('restaurantInfo');
+        var menu = document.getElementById('menu');
     
+        document.addEventListener('mousemove', function () {
+            restaurantInfo.style.opacity = 1;
+            menu.style.opacity = 1;
+    
+            setTimeout(function () {
+                restaurantInfo.style.opacity = 0;
+                menu.style.opacity = 0;
+            }, 3000);
+        });
+        
+    </script>
 
 </body>
 </html>
