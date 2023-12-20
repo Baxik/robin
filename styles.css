@@ -97,7 +97,9 @@ h1 {
 .photoContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5px;
+    grid-gap: 15px;
+    max-width: 100%;
+    height: 100%;
 }
 
 .photoContainer img.uploaded-image {
@@ -144,6 +146,7 @@ h1 {
 .address {
     display: block;
 }
+
 
 
 
