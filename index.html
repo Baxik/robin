@@ -36,8 +36,8 @@
         <a href="contact.html">Контакты</a>
         <a href="menu.html">Меню ресторана</a>
         <a href="photo.html">Галерея</a>
-          <img src="./pics/2024/5a3731025cb5c2.5325195715135664663797.png" alt="Логотип меню" style="width: 200px; height: 200px;">
-        
+        <img src="./pics/2024/5a3731025cb5c2.5325195715135664663797.png" alt="Логотип меню" style="width: 200px; height: 200px;">
+         
     </div>
 
     <div id="content">
@@ -45,7 +45,7 @@
         <div id="photoContainer">
             <img src="./pics/FB_IMG_1699899621359.jpg" alt="Ваша фотография" width="100%">
             <img src="./pics/2024/Happy-New-Year.jpg" alt="Ваша фотография" width="100%">
-            <p>ЧТОБЫ ОТКРЫТЬ МЕНЮ - "ТАПНИ" ПО СТРАНИЦЕ!</p>
+            
         </div>
     </div>
 
@@ -58,7 +58,28 @@
 
     <script src="script.js"></script>
     <script>
-document.addEventListener('DOMContentLoaded', function() {
+
+/*
+        var restaurantInfo = document.getElementById('restaurantInfo');
+        
+        var menu = document.getElementById('menu');
+
+      
+
+
+        document.addEventListener('mousemove', function() {
+            restaurantInfo.style.opacity = 1;
+            
+            menu.style.opacity = 1;
+            // Устанавливаем таймер на 3 секунды, после которого блок исчезнет
+            setTimeout(function() {
+                restaurantInfo.style.opacity = 0;
+
+                menu.style.opacity = 0;
+            }, 3000);
+        });
+        */
+        document.addEventListener('DOMContentLoaded', function() {
             var restaurantInfo = document.getElementById('restaurantInfo');
             var menu = document.getElementById('menu');
             var content = document.getElementById('content');
@@ -76,5 +97,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     </script>
 
+    
+
+
+
+     <input type="file" id="fileInput" accept="image/*">
+     <button onclick="uploadPhoto()">Загрузить</button>
+ 
+     <script>
+         function uploadPhoto() {
+             var fileInput = document.getElementById('fileInput');
+ 
+             if (fileInput.files.length > 0) {
+                 var formData = new FormData();
+                 formData.append('photo', fileInput.files[0]);
+ 
+                 fetch('http://localhost:3000/upload', {
+                     method: 'POST',
+                     body: formData
+                 })
+                 .then(response => response.text())
+                 .then(data => {
+                     console.log(data);
+                     // Возможно, здесь вы захотите обновить интерфейс после успешной загрузки
+                 })
+                 .catch(error => {
+                     console.error('Ошибка:', error);
+                 });
+ 
+                 fileInput.value = '';
+             }
+         }
+     </script>
 </body>
 </html>
