@@ -197,17 +197,21 @@ body {
     </script>
     <script>
 
-var restaurantInfo = document.getElementById('restaurantInfo');
-        var menu = document.getElementById('menu');
-    
-        document.addEventListener('mousemove', function () {
-            restaurantInfo.style.opacity = 1;
-            menu.style.opacity = 1;
-    
-            setTimeout(function () {
-                restaurantInfo.style.opacity = 0;
-                menu.style.opacity = 0;
-            }, 3000);
+document.addEventListener('DOMContentLoaded', function() {
+            var restaurantInfo = document.getElementById('restaurantInfo');
+            var menu = document.getElementById('menu');
+            var content = document.getElementById('content');
+
+            document.addEventListener('click', function() {
+                if (menu.style.display === 'none') {
+                    menu.style.display = 'block';
+                } else {
+                    menu.style.display = 'none';
+                }
+            });
+
+            // Скрыть меню при загрузке страницы
+            menu.style.display = 'none';
         });
         
     </script>
