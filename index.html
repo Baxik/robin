@@ -105,29 +105,19 @@
      <button onclick="uploadPhoto()">Загрузить</button>
  
      <script>
-         function uploadPhoto() {
-             var fileInput = document.getElementById('fileInput');
- 
-             if (fileInput.files.length > 0) {
-                 var formData = new FormData();
-                 formData.append('photo', fileInput.files[0]);
- 
-                 fetch('http://localhost:3000/upload', {
-                     method: 'POST',
-                     body: formData
-                 })
-                 .then(response => response.text())
-                 .then(data => {
-                     console.log(data);
-                     // Возможно, здесь вы захотите обновить интерфейс после успешной загрузки
-                 })
-                 .catch(error => {
-                     console.error('Ошибка:', error);
-                 });
- 
-                 fileInput.value = '';
-             }
-         }
+  function uploadPhoto() {
+        var fileInput = document.getElementById('fileInput');
+        var formData = new FormData();
+        formData.append('photo', fileInput.files[0]);
+
+        fetch('http://localhost:3000/upload', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(message => console.log(message))
+        .catch(error => console.error('Error:', error));
+    }
      </script>
 </body>
 </html>
