@@ -29,7 +29,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100hv;
+            height: 100vh; /* Исправлено: заменено "hv" на "vh" */
             background-color: #f2e60a;
         }
     </style>
@@ -50,21 +50,12 @@
     <div class="photo-grid">
         <div class="photoContainer">
             <img src="./pics/289412391_481323670660135_4224623042721888418_n.jpg" alt="Фото 1">
-            <img src="./pics/307124932_547228424069659_6970680621690972957_n.jpg" alt="Фото 2">
-            <img src="./pics/307300900_547226717403163_1894855588826684786_n.jpg" alt="Фото 3">
-            <img src="./pics/80364332_2575786475809836_758723977341304832_n.jpg" alt="Фото 4">
-            <img src="./pics/79796419_2575782895810194_187613019121909760_n.jpg" alt="Фото 5">
-            <img src="./pics/79315041_2560140724041078_3183851194871185408_n.jpg" alt="Фото 6">
-            <img src="./pics/80364332_2575786475809836_758723977341304832_n.jpg" alt="Фото 7">
-            <img src="./pics/79481220_2544693412252476_8161825235620855808_n.jpg" alt="Фото 8">
-            <img src="./pics/meat.jpeg" alt="Фото 9">
-            <img src="./pics/1.jpeg" alt="Фото 10">
-            <img src="./pics/2.jpeg" alt="Фото 11">
-            <img src="./pics/3.jpeg" alt="Фото 12">
-            <img src="./pics/4.jpeg" alt="Фото 13">
-            <img src="./pics/5.jpeg" alt="Фото 14">
-            <img src="./pics/6.jpeg" alt="Фото 15">
-            <img src="./pics/7.jpeg" alt="Фото 16">
+            <img src="./pics/1.jpeg" alt="Фото 1">
+            <img src="./pics/2.jpeg" alt="Фото 1">
+            <img src="./pics/3.jpeg" alt="Фото 1">
+            <img src="./pics/4.jpeg" alt="Фото 1">
+            
+            <!-- Добавленные фотографии будут появляться здесь -->
         </div>
     </div>
 
@@ -82,7 +73,7 @@
     </div>
 
     <script>
-        var savedPhotos = JSON.parse(sessionStorage.getItem('uploadedPhotos')) || [];
+        var savedPhotos = JSON.parse(localStorage.getItem('uploadedPhotos')) || [];
 
         function uploadPhoto() {
             var fileInput = document.getElementById('fileInput');
@@ -98,9 +89,6 @@
                 reader.onload = function (e) {
                     newImage.src = e.target.result;
                     newImage.alt = 'Новая фотография';
-
-                    // Добавляем стили для новой картинки
-                    // Вместо установки стилей, добавим класс "uploaded-image"
                     newImage.classList.add('uploaded-image');
 
                     var deleteButton = document.createElement('button');
@@ -118,7 +106,7 @@
                         alt: newImage.alt
                     });
 
-                   sessionStorage.setItem('uploadedPhotos', JSON.stringify(savedPhotos));
+                    sessionStorage.setItem('uploadedPhotos', JSON.stringify(savedPhotos));
                     localStorage.setItem('uploadedPhotos', JSON.stringify(savedPhotos));
                 };
 
@@ -132,6 +120,7 @@
             photoContainer.remove();
             savedPhotos.splice(index, 1);
             sessionStorage.setItem('uploadedPhotos', JSON.stringify(savedPhotos));
+            localStorage.setItem('uploadedPhotos', JSON.stringify(savedPhotos));
         }
 
         window.onload = function () {
@@ -172,11 +161,9 @@
                 }
             });
 
-            // Скрыть меню при загрузке страницы
             menu.style.display = 'none';
         });
     </script>
 
 </body>
 </html>
-
