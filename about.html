@@ -71,19 +71,21 @@
     <script src="script.js"></script>
 
     <script>
-        var restaurantInfo = document.getElementById('restaurantInfo');
+       document.addEventListener('DOMContentLoaded', function() {
+            var restaurantInfo = document.getElementById('restaurantInfo');
+            var menu = document.getElementById('menu');
+            var content = document.getElementById('content');
 
-        var menu = document.getElementById('menu');
+            document.addEventListener('click', function() {
+                if (menu.style.display === 'none') {
+                    menu.style.display = 'block';
+                } else {
+                    menu.style.display = 'none';
+                }
+            });
 
-        document.addEventListener('mousemove', function() {
-            restaurantInfo.style.opacity = 1;
-
-            menu.style.opacity = 1;
-        });
-            // Устанавливаем таймер на 3 секунды, после которого блок исчезнет
-            document.addEventListener('mouseout', function() {
-            restaurantInfo.style.opacity = 0;
-            menu.style.opacity = 0;
+            // Скрыть меню при загрузке страницы
+            menu.style.display = 'none';
         });
     </script>
 </body>
